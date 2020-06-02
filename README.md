@@ -9,12 +9,12 @@ disregarding security out of frustration.
 
 |*Pod*|*Image*|*PodSecurityContext*|fsGroup|fsGroupChangePolicy|runAsGroup|runAsNonRoot|runAsUser|seLinuxOptions|supplementalGroups|sysctls|windowsOptions|*SecurityContext*|allowPrivilegeEscalation|capabilities|privileged|procMount|readOnlyRootFilesystem|runAsGroup|runAsNonRoot|runAsUser|seLinuxOptions|windowsOptions|`$ id`|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|[001](pods/001.yaml)|[no-uid-no-gid](images/no-uid-no-gid)|**No**|-|-|-|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=0(root) gid=0(root) groups=0(root)`|
-|[002](pods/002.yaml)|[uid-no-gid](images/uid-no-gid)|**No**|-|-|-|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=1000 gid=0(root) groups=0(root)`|
-|[003](pods/003.yaml)|[uid-gid](images/uid-gid)|**No**|-|-|-|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=1000(1000) gid=1000(mygroup) groups=1000(mygroup)`|
-|[004](pods/004.yaml)|[no-uid-no-gid](images/no-uid-no-gid)|**Yes**|`2000`|-|-|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=0(root) gid=0(root) groups=0(root),2000`|
-|[005](pods/005.yaml)|[no-uid-no-gid](images/no-uid-no-gid)|**Yes**|-|-|`3000`|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`Failed create pod sandbox: rpc error: code = Unknown desc = failed to make sandbox docker config for pod "005": runAsGroup is specified without a runAsUser`|
-|[006](pods/006.yaml)|[no-uid-no-gid](images/no-uid-no-gid)|**Yes**|-|-|`3000`|-|`2000`|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=2000 gid=3000 groups=3000`|
+|[001](pods/001.yaml)|[no-uid-no-gid](images/no-uid-no-gid/Dockerfile)|**No**|-|-|-|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=0(root) gid=0(root) groups=0(root)`|
+|[002](pods/002.yaml)|[uid-no-gid](images/uid-no-gid/Dockerfile)|**No**|-|-|-|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=1000 gid=0(root) groups=0(root)`|
+|[003](pods/003.yaml)|[uid-gid](images/uid-gid/Dockerfile)|**No**|-|-|-|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=1000(1000) gid=1000(mygroup) groups=1000(mygroup)`|
+|[004](pods/004.yaml)|[no-uid-no-gid](images/no-uid-no-gid/Dockerfile)|**Yes**|`2000`|-|-|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=0(root) gid=0(root) groups=0(root),2000`|
+|[005](pods/005.yaml)|[no-uid-no-gid](images/no-uid-no-gid/Dockerfile)|**Yes**|-|-|`3000`|-|-|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`Failed create pod sandbox: rpc error: code = Unknown desc = failed to make sandbox docker config for pod "005": runAsGroup is specified without a runAsUser`|
+|[006](pods/006.yaml)|[no-uid-no-gid](images/no-uid-no-gid/Dockerfile)|**Yes**|-|-|`3000`|-|`2000`|-|-|-|-|**No**|-|-|-|-|-|-|-|-|-|-|`uid=2000 gid=3000 groups=3000`|
 
 ## Descriptions
 
