@@ -9,3 +9,6 @@ disregarding security out of frustration.
 
 |*Pod*|*Image*|*PodSecurityContext*|fsGroup|fsGroupChangePolicy|runAsGroup|runAsNonRoot|runAsUser|seLinuxOptions|supplementalGroups|sysctls|windowsOptions|*SecurityContext*|allowPrivilegeEscalation|capabilities|privileged|procMount|readOnlyRootFilesystem|runAsGroup|runAsNonRoot|runAsUser|seLinuxOptions|windowsOptions|`$ id`|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|`001`|`no-uid-no-gid`|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|`uid=0(root) gid=0(root) groups=0(root)`|
+|`002`|`uid-no-gid`|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|`uid=1000 gid=0(root) groups=0(root)`|
+|`003`|`uid-gid`|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|`uid=1000(1000) gid=1000(mygroup) groups=1000(mygroup)`|
