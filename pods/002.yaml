@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "002"
+spec:
+  containers:
+  - name: server
+    image: hasheddan/uid-no-gid
