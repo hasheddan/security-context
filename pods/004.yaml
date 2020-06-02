@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "004"
+spec:
+  securityContext:
+    fsGroup: 2000
+  containers:
+  - name: server
+    image: hasheddan/no-uid-no-gid

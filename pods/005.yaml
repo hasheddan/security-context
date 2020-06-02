@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "005"
+spec:
+  securityContext:
+    # Note: this container will fail to start because runAsGroup
+    # requires runAsUser be set on Pod security context.
+    runAsGroup: 3000
+  containers:
+  - name: server
+    image: hasheddan/no-uid-no-gid
